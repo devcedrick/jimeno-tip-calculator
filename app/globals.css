@@ -17,11 +17,11 @@
 
 @layer utilities {
   .tip-component{
-    @apply w-28 h-12 text-2xl font-semibold rounded-md;
+    @apply w-32 h-11 text-xl lg:w-30 lg:h-12 lg:text-2xl font-semibold rounded-md;
   }
 
   .input{
-    @apply focus:outline-3 focus:outline-[#5bbbaf] placeholder:text-left text-right placeholder:text-gray-400 text-[#00494d];
+    @apply focus:outline-3 focus:outline-[#5bbbaf] placeholder:text-right lg:placeholder:text-left text-right placeholder:text-gray-400 text-[#00494d];
   }
 
   .button{

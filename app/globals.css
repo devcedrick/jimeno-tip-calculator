@@ -4,6 +4,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #26c0ab;
+  --secondary-color: #00494d;
 }
 
 @theme inline {
@@ -14,19 +16,20 @@
 }
 
 @layer utilities {
+  .tip-component{
+    @apply w-28 h-12 text-2xl font-semibold rounded-md;
+  }
+
+  .input{
+    @apply focus:outline-3 focus:outline-[#5bbbaf] placeholder:text-left text-right placeholder:text-gray-400 text-[#00494d];
+  }
+
   .button{
-    @apply bg-[#00494d] text-white cursor-pointer;
+    @apply bg-(--secondary-color) text-white cursor-pointer;
   }
 
   .button-active {
-    @apply !bg-[#5bbbaf] !text-[#00494d];
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    @apply !bg-(--primary-color) !text-[#00494d];
   }
 }
 

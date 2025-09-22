@@ -28,7 +28,9 @@
     @apply outline-(--primary-color) ring-3 ring-(--primary-color);
   }
 
-
+  .input-label {
+    @apply text-base text-gray-500 font-semibold;
+  }
 
   .button{
     @apply bg-(--secondary-color) text-white cursor-pointer;

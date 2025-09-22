@@ -9,7 +9,7 @@ const InputPanel = () => {
         <p className='input-label mb-2'>Bill</p>
         <Input placeholder="0" imgSrc="/images/icon-dollar.svg" allowFloatingNum={true} />
       </div>
-      <TipLayout />
+      <TipLayout/>
       <div>
         <p className='input-label mb-2'>Number of People</p>
         <Input placeholder="0" imgSrc="/images/icon-person.svg" allowFloatingNum={false} />

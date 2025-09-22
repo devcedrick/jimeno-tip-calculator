@@ -9,8 +9,8 @@ const TipLayout = () => {
     updateTipSelection, updateCustomTip, isTipSelected
   } = useTipCalculator();
 
-  const handleCustomTipChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    updateCustomTip(e.target.value);
+  const handleCustomTipChange = (value: string) => {
+    updateCustomTip(value);
   }
 
   const handleTipSelection = (tip: number) => {
@@ -33,7 +33,7 @@ const TipLayout = () => {
 
         <TipButton percentage={50} isSelected={isTipSelected(50)} onTipSelect={() => handleTipSelection(50)}/>
 
-        <TipInput placeholder="Custom" onCustomTipChange={handleCustomTipChange}/>
+        <TipInput placeholder="Custom" value={customTip} onCustomTipChange={handleCustomTipChange}/>
       </div>
     </div>
   )

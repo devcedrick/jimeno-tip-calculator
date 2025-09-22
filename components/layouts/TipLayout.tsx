@@ -15,8 +15,6 @@ const TipLayout = () => {
 
   const handleTipSelection = (tip: number) => {
     updateTipSelection(tip);
-
-    console.log(`Tip Supposedly: ${tip}`);
   }
 
   return (

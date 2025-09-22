@@ -28,6 +28,10 @@
     @apply outline-(--primary-color) ring-3 ring-(--primary-color);
   }
 
+  .input-error-focus {
+    @apply outline-red-400 ring-3 ring-red-400;
+  }
+
   .input-label {
     @apply text-base text-gray-500 font-semibold;
   }

@@ -4,7 +4,7 @@ import TipLayout from './TipLayout'
 
 const InputPanel = () => {
   return (
-    <div className='flex flex-col justify-between gap-6 w-max h-max p-5'>
+    <div className='flex flex-col justify-between gap-6 max-sm:w-full w-max h-max p-2 lg:p-5 '>
       <div>
         <p className='input-label mb-2'>Bill</p>
         <Input placeholder="0" imgSrc="/images/icon-dollar.svg" allowFloatingNum={true} />

@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #C5E4E7;
   --foreground: #171717;
   --primary-color: #26c0ab;
   --secondary-color: #00494d;
@@ -45,4 +45,5 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Space Mono';
+  box-sizing: border-box;
 }

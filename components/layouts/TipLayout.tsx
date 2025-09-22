@@ -20,9 +20,9 @@ const TipLayout = () => {
   }
 
   return (
-    <div className='flex flex-col justify-start w-max h-max gap-4'>
+    <div className='flex flex-col justify-start lg:w-full h-max gap-4'>
       <p className='input-label'>Select Tip %</p>
-      <div className='grid grid-cols-2 lg:grid-cols-3 gap-4'>
+      <div className='grid grid-cols-2 sm:grid-cols-3 gap-4'>
         <TipButton percentage={5} isSelected={isTipSelected(5)} onTipSelect={() => handleTipSelection(5)}/>
 
         <TipButton percentage={10} isSelected={isTipSelected(10)} onTipSelect={() => handleTipSelection(10)}/>

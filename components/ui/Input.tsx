@@ -34,7 +34,7 @@ const Input = ({placeholder, imgSrc, allowFloatingNum}: InputProps) => {
   return (
     <div className={`flex flex-row items-center bg-gray-200 w-full h-12 text-xl lg:text-2xl rounded-md px-5 text-right font-semibold text-(--secondary-color) ${isFocused ? 'input-focus' : ''}`}>
       <img src={imgSrc} alt="Dollar Sign" className='aspect-square w-4'/>
-      <input className='flex-1 text-right focus:outline-0' placeholder={placeholder} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} onInput={handleInputChange} />
+      <input className='w-full text-right focus:outline-0' placeholder={placeholder} onFocus={() => setIsFocused(true)} onBlur={() => setIsFocused(false)} onInput={handleInputChange} />
     </div>
   )
 }

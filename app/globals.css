@@ -24,6 +24,12 @@
     @apply focus:outline-3 focus:outline-[#5bbbaf] placeholder:text-right lg:placeholder:text-left text-right placeholder:text-gray-400 text-[#00494d];
   }
 
+  .input-focus {
+    @apply outline-(--primary-color) ring-3 ring-(--primary-color);
+  }
+
+
+
   .button{
     @apply bg-(--secondary-color) text-white cursor-pointer;
   }

@@ -1,5 +1,4 @@
 "use client"
-import { useTipCalculator } from "@/hooks/useTipCalculator";
 import InputPanel from "@/components/layouts/InputPanel";
 import ResultPanel from "@/components/layouts/ResultPanel";
 

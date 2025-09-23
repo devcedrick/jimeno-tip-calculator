@@ -1,0 +1,24 @@
+import "./globals.css";
+import TipCalcContextProvider from "@/context/TipCalcContext";
+
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></link>
+      </head>
+      <body
+        className={`antialiased`}
+      >
+        <TipCalcContextProvider>
+          {children}
+        </TipCalcContextProvider>
+      </body>
+    </html>
+  );
+}

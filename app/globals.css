@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #C5E4E7;
+  --foreground: #171717;
+  --primary-color: #26c0ab;
+  --secondary-color: #00494d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer utilities {
+  .tip-component{
+    @apply w-32 h-11 text-xl lg:w-30 lg:h-12 lg:text-2xl font-semibold rounded-md;
+  }
+
+  .input{
+    @apply focus:outline-3 focus:outline-[#5bbbaf] placeholder:text-right lg:placeholder:text-left text-right placeholder:text-gray-400 text-[#00494d];
+  }
+
+  .input-focus {
+    @apply outline-(--primary-color) ring-3 ring-(--primary-color);
+  }
+
+  .input-error-focus {
+    @apply outline-red-400 ring-3 ring-red-400;
+  }
+
+  .input-label {
+    @apply text-base text-gray-500 font-semibold;
+  }
+
+  .button{
+    @apply bg-(--secondary-color) text-white cursor-pointer;
+  }
+
+  .button-active {
+    @apply !bg-(--primary-color) !text-[#00494d];
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Space Mono';
+  box-sizing: border-box;
+}

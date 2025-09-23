@@ -31,15 +31,12 @@ export function useTipCalculator() {
     setState(prev => ({ ...prev, peopleNum: count }));
   };
 
-  const isTipSelected = (percentage: number) => percentage === state.selectedTip;
-
   return{
     ...state,
     updateBillAmount,
     updateTipSelection,
     updateCustomTip,
     updatePeopleCount,
-    isTipSelected,
   }
 }
 

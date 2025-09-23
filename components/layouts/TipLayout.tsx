@@ -2,12 +2,12 @@
 import React from 'react'
 import TipButton from '../ui/TipButton'
 import TipInput from '../ui/TipInput'
-import { useTipCalculator } from '@/hooks/useTipCalculator'
+import { useTipCalcContext } from '@/hooks/useTipCalcContext'
 
 const TipLayout = () => {
   const {selectedTip, customTip,
     updateTipSelection, updateCustomTip, isTipSelected
-  } = useTipCalculator();
+  } = useTipCalcContext();
 
   const handleCustomTipChange = (value: string) => {
     updateCustomTip(value);

@@ -2,24 +2,15 @@
 import React, { createContext } from 'react'
 import { useTipCalculator } from '@/hooks/useTipCalculator'
 
-export const TipCalcContext = createContext<ReturnType<typeof useTipCalculator > | null>(null)
+export const TipCalcContext = createContext<ReturnType<typeof useTipCalculator> | null>(null)
 
 const TipCalcContextProvider = ({children}: {children: React.ReactNode}) => {
-  const {billAmount, updateBillAmount} = useTipCalculator();
-  const {selectedTip, updateTipSelection} = useTipCalculator();
-  const {customTip, updateCustomTip} = useTipCalculator();
-  const {peopleNum, updatePeopleCount} = useTipCalculator();
-  const {isTipSelected} = useTipCalculator();
+  const tipCalculator = useTipCalculator();
+  
+  const isTipSelected = (percentage: number) => percentage === tipCalculator.selectedTip;
 
   const value = {
-    billAmount,
-    updateBillAmount,
-    selectedTip,
-    updateTipSelection,
-    customTip,
-    updateCustomTip,
-    peopleNum,
-    updatePeopleCount,
+    ...tipCalculator,
     isTipSelected
   }
 

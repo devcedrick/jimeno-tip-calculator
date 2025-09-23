@@ -9,10 +9,10 @@ interface TipCalculatorState {
 
 export function useTipCalculator() {
   const [state, setState] = useState<TipCalculatorState>({
-    billAmount: '0',
+    billAmount: '',
     selectedTip: 0,
     customTip: '',
-    peopleNum: '0'
+    peopleNum: ''
   });
 
   const updateBillAmount = (amount: string) => {

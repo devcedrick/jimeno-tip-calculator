@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 interface InputProps{
   placeholder: string;
   imgSrc: string;
+  value: string
   allowFloatingNum: boolean;
   allowZero: boolean;
   onChange: (value: string) => void;
 }
 
-const Input = ({placeholder, imgSrc, allowFloatingNum, allowZero, onChange}: InputProps) => {
+const Input = ({placeholder, imgSrc, allowFloatingNum, value, allowZero, onChange}: InputProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -43,6 +44,7 @@ const Input = ({placeholder, imgSrc, allowFloatingNum, allowZero, onChange}: Inp
       }
       <img src={imgSrc} alt="Dollar Sign" className='aspect-square w-4 ml-5'/>
       <input className='w-full h-full text-right focus:outline-0 px-5' placeholder={placeholder}
+      value={value}
         onFocus={() => {setIsFocused(true)}} 
         onBlur={() => {
           if (hasError) setIsFocused(true)

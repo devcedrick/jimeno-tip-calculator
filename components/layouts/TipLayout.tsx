@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import TipButton from '../ui/TipButton'
-import TipInput from '../ui/TipInput'
+import TipInput from '../ui/TipInput';
 import { useTipCalcContext } from '@/hooks/useTipCalcContext'
 
 const TipLayout = () => {

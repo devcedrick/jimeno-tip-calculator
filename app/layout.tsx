@@ -4,7 +4,7 @@ import TipCalcContextProvider from "@/context/TipCalcContext";
 
 export const metadata: Metadata = {
   title: {
-    default: 'Tip Calculator',
+    default: 'Tip Calculator | DevDotCed',
     template: '%s | Tip Calculator'
   },
   description: 'Calculate tips and split bills easily with our accurate tip calculator. Perfect for restaurants, bars, and group dining.',

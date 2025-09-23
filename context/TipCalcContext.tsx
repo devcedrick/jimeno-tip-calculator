@@ -9,9 +9,18 @@ const TipCalcContextProvider = ({children}: {children: React.ReactNode}) => {
   
   const isTipSelected = (percentage: number) => percentage === tipCalculator.selectedTip;
 
+  const onReset = () => {
+    tipCalculator.updateBillAmount('');
+    tipCalculator.updateCustomTip('');
+    tipCalculator.updatePeopleCount('');
+    tipCalculator.updateTipSelection(0);
+
+  }
+
   const value = {
     ...tipCalculator,
-    isTipSelected
+    isTipSelected,
+    onReset,
   }
 
   return (

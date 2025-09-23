@@ -4,7 +4,7 @@ import { calcTipAmount, calcTotalPerPerson } from '@/lib/utils/calculate'
 import React, { useEffect } from 'react'
 
 const ResultPanel = () => {
-  const {billAmount, selectedTip, customTip, peopleNum} = useTipCalcContext();
+  const {billAmount, selectedTip, customTip, peopleNum, onReset} = useTipCalcContext();
 
   const tipAmount = calcTipAmount(billAmount, peopleNum, selectedTip, customTip);
   const totalPerPerson = calcTotalPerPerson(billAmount, peopleNum, tipAmount);
@@ -29,7 +29,9 @@ const ResultPanel = () => {
           <p className='text-(--primary-color) font-semibold text-4xl'>${totalPerPerson.toFixed(2)}</p>
         </div>
       </div>
-      <button className='font-semibold text-lg bg-(--primary-color) text-(--secondary-color) w-full py-3 rounded-md'>RESET</button>
+      <button className='font-semibold text-lg bg-(--primary-color) text-(--secondary-color) w-full py-3 rounded-md cursor-pointer hover:bg-[#55b7aa] hover:-translate-y-1' onClick={() => {
+        onReset();
+      }}>RESET</button>
     </div>
   )
 }

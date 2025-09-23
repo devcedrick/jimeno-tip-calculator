@@ -18,12 +18,12 @@ const InputPanel = () => {
     <div className='flex flex-col justify-between gap-8 max-sm:w-full w-max h-max p-2 lg:p-5 '>
       <div>
         <p className='input-label mb-2'>Bill</p>
-        <Input placeholder="0" imgSrc="/images/icon-dollar.svg" allowFloatingNum={true} allowZero={true} onChange={handleBillAmountChange} />
+        <Input placeholder="0" imgSrc="/images/icon-dollar.svg" value={billAmount} allowFloatingNum={true} allowZero={true} onChange={handleBillAmountChange} />
       </div>
       <TipLayout/>
       <div>
         <p className='input-label mb-2'>Number of People</p>
-        <Input placeholder="0" imgSrc="/images/icon-person.svg" allowFloatingNum={false} allowZero={false} onChange={handlePeopleCountChange}/>
+        <Input placeholder="0" imgSrc="/images/icon-person.svg" value={peopleNum} allowFloatingNum={false} allowZero={false} onChange={handlePeopleCountChange}/>
       </div>
     </div>
   )

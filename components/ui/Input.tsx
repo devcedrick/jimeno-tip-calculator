@@ -40,7 +40,7 @@ const Input = ({placeholder, imgSrc, allowFloatingNum, value, allowZero, onChang
   return (
     <div className={`flex flex-row items-center bg-gray-200 w-full h-12 text-xl lg:text-2xl rounded-md  text-right font-semibold text-(--secondary-color) ${isFocused ? (hasError ? 'input-error-focus' : 'input-focus') : ''} relative`}>
       {
-        hasError ? <p className='text-red-400 absolute -top-8 right-0 text-base'>Can't be zero</p> : <></>
+        hasError ? <p className='text-red-400 absolute -top-8 right-0 text-base'>{`Can't be zero`}</p> : <></>
       }
       <img src={imgSrc} alt="Dollar Sign" className='aspect-square w-4 ml-5'/>
       <input className='w-full h-full text-right focus:outline-0 px-5' placeholder={placeholder}

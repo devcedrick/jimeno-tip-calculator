@@ -5,7 +5,7 @@ import TipInput from '../ui/TipInput';
 import { useTipCalcContext } from '@/hooks/useTipCalcContext'
 
 const TipLayout = () => {
-  const {selectedTip, customTip,
+  const { customTip,
     updateTipSelection, updateCustomTip, isTipSelected
   } = useTipCalcContext();
 

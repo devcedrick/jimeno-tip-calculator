@@ -1,7 +1,6 @@
 import { useTipCalcContext } from '@/hooks/useTipCalcContext';
-import { useTipCalculator } from '@/hooks/useTipCalculator'
 import { calcTipAmount, calcTotalPerPerson } from '@/lib/utils/calculate'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const ResultPanel = () => {
   const {billAmount, selectedTip, customTip, peopleNum, onReset} = useTipCalcContext();

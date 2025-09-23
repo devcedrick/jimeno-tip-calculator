@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Input from '../ui/Input'
 import TipLayout from './TipLayout'
 import { useTipCalcContext } from '@/hooks/useTipCalcContext'

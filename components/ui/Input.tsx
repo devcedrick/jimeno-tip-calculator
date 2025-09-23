@@ -4,41 +4,36 @@ interface InputProps{
   placeholder: string;
   imgSrc: string;
   allowFloatingNum: boolean;
-  allowZero: boolean
+  allowZero: boolean;
+  onChange: (value: string) => void;
 }
 
-const Input = ({placeholder, imgSrc, allowFloatingNum, allowZero}: InputProps) => {
+const Input = ({placeholder, imgSrc, allowFloatingNum, allowZero, onChange}: InputProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const [hasError, setHasError] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;          
+    let inputValue = e.target.value;
     
     if (allowFloatingNum) {
-      const filtered = value.replace(/[^0-9.]/g, '');
-      
-      const parts = filtered.split('.');
-      
-      let finalValue;
+      inputValue = inputValue.replace(/[^0-9.]/g, '');
+      const parts = inputValue.split('.');
       if (parts.length > 2) {
-        finalValue = parts[0] + '.' + parts.slice(1).join('');
-      } else {
-        finalValue = filtered;
+        inputValue = parts[0] + '.' + parts.slice(1).join('');
       }
-      
-      e.target.value = finalValue;
-
     } else {
-      const filtered = value.replace(/[^0-9]/g, '');
-      e.target.value = filtered;
+      inputValue = inputValue.replace(/[^0-9]/g, '');
     }
 
-    if(!allowZero && parseInt(e.target.value) === 0) {
-        setHasError(true);
-      } else {
-        setHasError(false);
-      }
-
+    e.target.value = inputValue;
+    const numValue = inputValue === '' ? 0 : parseFloat(inputValue);
+    
+    if (!allowZero && numValue === 0) {
+      setHasError(true);
+    } else {
+      setHasError(false);
+      onChange(e.target.value);
+    }
   };
 
   return (
@@ -47,14 +42,14 @@ const Input = ({placeholder, imgSrc, allowFloatingNum, allowZero}: InputProps) =
         hasError ? <p className='text-red-400 absolute -top-8 right-0 text-base'>Can't be zero</p> : <></>
       }
       <img src={imgSrc} alt="Dollar Sign" className='aspect-square w-4 ml-5'/>
-      <input className='w-full h-full text-right focus:outline-0 px-5' placeholder={placeholder} 
+      <input className='w-full h-full text-right focus:outline-0 px-5' placeholder={placeholder}
         onFocus={() => {setIsFocused(true)}} 
         onBlur={() => {
           if (hasError) setIsFocused(true)
           else setIsFocused(false);
           } 
         }
-        onInput={handleInputChange} />
+        onChange={handleInputChange}/>
     </div>
   )
 }

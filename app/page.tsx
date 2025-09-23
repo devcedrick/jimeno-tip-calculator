@@ -4,13 +4,6 @@ import InputPanel from "@/components/layouts/InputPanel";
 import ResultPanel from "@/components/layouts/ResultPanel";
 
 export default function Home() {
-  const {
-    billAmount, peopleNum,
-    updateBillAmount, updatePeopleCount,
-  } = useTipCalculator();
-
-  
-
   return (
     <main className="flex flex-col gap-8 items-center justify-center">
       <img className="w-max h-max max-sm:mt-32 sm:mt-18 mb-3" src="/images/logo.svg" alt="App Logo" />

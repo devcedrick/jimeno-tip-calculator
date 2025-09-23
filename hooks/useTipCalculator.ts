@@ -1,21 +1,21 @@
 import { useState } from "react";
 
 interface TipCalculatorState {
-  billAmount: number;
+  billAmount: string;
   selectedTip: number;
   customTip: string;
-  peopleNum: number;
+  peopleNum: string;
 }
 
 export function useTipCalculator() {
   const [state, setState] = useState<TipCalculatorState>({
-    billAmount: 0,
+    billAmount: '0',
     selectedTip: 0,
     customTip: '',
-    peopleNum: 0
+    peopleNum: '0'
   });
 
-  const updateBillAmount = (amount: number) => {
+  const updateBillAmount = (amount: string) => {
     setState(prev => ({ ...prev, billAmount: amount }));
   };
 
@@ -27,11 +27,9 @@ export function useTipCalculator() {
     setState(prev => ({ ...prev, customTip: tip, selectedTip: 0 }));
   };
 
-  const updatePeopleCount = (count: number) => {
-    setState(prev => ({ ...prev, peopleNum: Math.max(1, count) }));
+  const updatePeopleCount = (count: string) => {
+    setState(prev => ({ ...prev, peopleNum: count }));
   };
-
-  const isTipSelected = (percentage: number) => percentage === state.selectedTip;
 
   return{
     ...state,
@@ -39,7 +37,6 @@ export function useTipCalculator() {
     updateTipSelection,
     updateCustomTip,
     updatePeopleCount,
-    isTipSelected,
   }
 }
 
